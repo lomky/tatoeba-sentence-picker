@@ -2,7 +2,6 @@
 ## Description
 Somewhat shaky interface to get sentences from Tatoeba. Uses their API, use politely.
 
-<img src="" width="600" height="300" />
 ![CLI Demo](./media/demo.gif)
 
 ## Usage
