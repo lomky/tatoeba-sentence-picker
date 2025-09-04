@@ -1,5 +1,12 @@
 #!/usr/bin/python3
-"""Starts a REPL - give a word, get sentences, pick one, repeat. Final output: get hanzi, zhuyin, pinyin, meaning"""
+"""
+Find sentences for your Chinese words from Tatoeba.
+Can run as a REPL or take an input file. Input file should have lines like:
+字  meaning
+Starts a REPL - give a word, get sentences, pick one, repeat.
+
+Final output: hanzi, zhuyin, pinyin, meaning, author, license
+"""
 
 from pathlib import Path
 import click
@@ -77,7 +84,16 @@ class TatoebaSentence:
     def option(self):
         return f"{self.sentence} | {self.meaning} | (by {self.author})"
 
-def process_word(text):
+def split_entry(entry):
+    if "\t" in entry:
+        return entry.split("\t")
+    return (entry, "")
+
+
+
+def process_word(entry):
+    (text, meaning) = split_entry(entry)
+    print(f"{text}\t{meaning}")
     tatoeba = Tatoeba(text)
     tatoeba.call()
     if not tatoeba.has_result:

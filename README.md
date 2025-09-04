@@ -2,6 +2,7 @@
 ## Description
 Somewhat shaky interface to get sentences from Tatoeba. Uses their API, use politely.
 
+## REPL Demo
 ![CLI Demo](./media/demo.gif)
 
 ## Usage
@@ -14,26 +15,16 @@ Somewhat shaky interface to get sentences from Tatoeba. Uses their API, use poli
 
 ### Run the script
 
-REPL mode:
-
-```bash
-python ./tatoeba-sentences.py
-```
-
-From file:
-
-```bash
-python ./tatoeba-sentences.py -i input.txt
-```
-
 ```bash
 Usage: tatoeba-sentences.py [OPTIONS]
 
 Options:
   -i, --input_file TEXT  File to read the words from, one word per line.
-  --repl                 Open a REPL to query one word at a time.
+  --repl                 Open a REPL to query one word at a time. Default.
   --help                 Show this message and exit.
 ```
+
+See [the exmaple input file](./data/input_test.txt) for the format.
 
 ## Disclaimer
 I wrote this in a few hours, use at your risk!

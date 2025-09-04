@@ -1,4 +1,4 @@
-幫
-貓
-寫
-我們
+幫	help
+貓	cat
+寫	write
+我們	we/us
