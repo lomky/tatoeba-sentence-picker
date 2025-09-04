@@ -105,6 +105,7 @@ def process_word(entry):
     for sentence in tatoeba.sentences:
         options.append( (index, sentence.option()) )
         index+=1
+    options.append( (index, "Skip") )
 
     result = choice(
             message="Select sentence",
@@ -113,6 +114,8 @@ def process_word(entry):
             style=STYLE,
             show_frame=~is_done,
     )
+    if result == index:
+        return
     picked = tatoeba.sentences[result]
     return picked
 
